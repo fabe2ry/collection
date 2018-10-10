@@ -213,9 +213,11 @@ public class UserController {
     @ApiOperation(value="导入goods的excel", notes="")
     @WebLogAnnotation(annotationName = "导入goods的excel")
     @PostMapping("/importGoodsExcel")
-    public void importGoodsExcel(HttpServletRequest request, HttpServletResponse response){
+    @ResponseBody
+    public ListVo importGoodsExcel(HttpServletRequest request, HttpServletResponse response){
         if(!LoginHelper.checkHasLogined(request, response)){
-            return;
+            return LoginHelper.getFailListVo("请先登陆");
+//            return ;
         }
 
         Class[] classes = new Class[]{Goods.class};
@@ -225,6 +227,13 @@ public class UserController {
             excelService.storeGoodsList(allList.get(0));
         }
         ExcelUtil.writeWorkBookToResponse(workbook, response);
+
+        ListVo listVo = new ListVo();
+        listVo.setSuccess(true);
+        listVo.setTotal(allList.get(0).size());
+        listVo.setMessage("上传成功");
+        listVo.setResult(allList.get(0));
+        return listVo;
     }
 
     @ApiOperation(value="获得Goods的列表", notes="")

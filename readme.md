@@ -28,7 +28,7 @@
 
 * 项目打包，进入最外层的pox.xml文件所在位置，输入`mvn clean package`
 * 通过jar启动项目`java -jar sample-0.0.1-SNAPSHOT.jar --spring.profiles.active=test`,使用h2数据库
-* 项目前端界面建议使用idea的build-in web部署，这是由于cors如果要允许cookie，设置时候不能使用*来允许，所有代码中只指定了idea的build-in web，即`http://localhost:63342/`
+* 项目前端界面建议使用idea的build-in web部署，这是由于cors如果要允许cookie，设置时候不能使用*来允许，所以代码中跨域只指定了idea的build-in web，即`http://localhost:63342/`
 
 
 

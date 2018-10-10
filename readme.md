@@ -25,3 +25,8 @@
 
 * 通过jar包启动项目，找到`/release`文件夹下的jar，输入`java -jar sample-0.0.1-SNAPSHOT.jar --spring.profiles.active=test`启动项目,使用h2数据库
 * 项目前端界面建议使用idea的build-in web部署，这是由于cors如果要允许cookie，设置时候不能使用*来允许，所有代码中只指定了idea的build-in web，即`http://localhost:63342/`
+
+#### 获取测试提交的excel文件链接
+
+``http://localhost:8080/api/user/getTestExcel`
+

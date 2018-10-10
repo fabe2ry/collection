@@ -50,6 +50,8 @@
                         <input type="file" name="file"/>
                         <input type="submit" value="提交">
                     </form>
+
+                    <button type="button" class="btn btn btn-primary" v-on:click="download">下载随机数据模板</button>
                 </div>
             </div>
         </div>
@@ -71,6 +73,9 @@
         mounted:function(){
         },
         methods:{
+            download:function () {
+                window.location.href="http://localhost:8080/api/user/getTestExcel";
+            },
         }
     })
 </script>

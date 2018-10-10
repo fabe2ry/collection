@@ -290,3 +290,277 @@
 2018-10-10 15:07:18.532  INFO 17136 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2018-10-10 15:07:18.830  INFO 17136 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2018-10-10 15:11:05.321  INFO 17136 --- [http-nio-8080-exec-2] com.fabe2ry.ExcelUtil                    : ClassSettingBean{clazz=class com.fabe2ry.model.example.Goods, sheetSettingBean=SheetSettingBean{sheetName='货物表', headerRowIndex=0}, colSettingBeans=[ColSettingBean{columnName='货物名字', exportOrder=99, columnType=STRING, allowEmopty=false, columnIndex=-1, injectMethod=public void com.fabe2ry.model.example.Goods.setName(java.lang.String), ectractMethod=public java.lang.String com.fabe2ry.model.example.Goods.getName()}, ColSettingBean{columnName='货物型号', exportOrder=99, columnType=STRING_PURE_NUMBER, allowEmopty=false, columnIndex=-1, injectMethod=public void com.fabe2ry.model.example.Goods.setType(java.lang.String), ectractMethod=public java.lang.String com.fabe2ry.model.example.Goods.getType()}]}
+2018-10-10 15:16:34.241  INFO 17412 --- [main] com.fabe2ry.CollectionApplication        : Starting CollectionApplication on X-CDN-XIAOXQ with PID 17412 (D:\collection\sample\target\classes started by xiaoxq in D:\collection)
+2018-10-10 15:16:34.245  INFO 17412 --- [main] com.fabe2ry.CollectionApplication        : The following profiles are active: dev
+2018-10-10 15:16:34.312  INFO 17412 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35841320: startup date [Wed Oct 10 15:16:34 CST 2018]; root of context hierarchy
+2018-10-10 15:16:36.682  INFO 17412 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4a0fd3b9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-10 15:16:37.524  INFO 17412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-10-10 15:16:37.554  INFO 17412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-10 15:16:37.554  INFO 17412 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-10-10 15:16:37.560  INFO 17412 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2018-10-10 15:16:37.561  INFO 17412 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2018-10-10 15:16:37.561  INFO 17412 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2018-10-10 15:16:38.633  INFO 17412 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2018-10-10 15:16:38.746  INFO 17412 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-10-10 15:16:38.746  INFO 17412 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4435 ms
+2018-10-10 15:16:38.837  INFO 17412 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-10-10 15:16:38.845  INFO 17412 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-10 15:16:38.845  INFO 17412 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-10 15:16:38.846  INFO 17412 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-10 15:16:38.846  INFO 17412 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-10 15:16:39.836  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/add],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.add(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String,int)
+2018-10-10 15:16:39.838  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/register],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.register(java.lang.String,java.lang.String,java.lang.String)
+2018-10-10 15:16:39.839  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/update],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.update(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2018-10-10 15:16:39.839  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/delete],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.delete(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+2018-10-10 15:16:39.840  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/test],methods=[GET]}" onto public java.lang.String com.fabe2ry.controller.UserController.test() throws java.lang.Throwable
+2018-10-10 15:16:39.840  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/logout],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:16:39.841  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/login],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2018-10-10 15:16:39.841  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getUsers/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getUsers(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:16:39.841  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/exportGoodsExcel],methods=[GET]}" onto public void com.fabe2ry.controller.UserController.exportGoodsExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:16:39.842  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getTestExcel],methods=[GET]}" onto public void com.fabe2ry.controller.UserController.getTestExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:16:39.843  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/importGoodsExcel],methods=[POST]}" onto public void com.fabe2ry.controller.UserController.importGoodsExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:16:39.843  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getLogs/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllLog(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:16:39.844  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getGoods/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllGoods(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:16:39.850  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-10-10 15:16:39.851  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-10-10 15:16:39.852  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-10-10 15:16:39.855  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-10 15:16:39.856  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:16:40.114  INFO 17412 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-10-10 15:16:40.272  INFO 17412 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:16:40.505  INFO 17412 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35841320: startup date [Wed Oct 10 15:16:34 CST 2018]; root of context hierarchy
+2018-10-10 15:16:40.571  INFO 17412 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:16:40.571  INFO 17412 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:16:40.638  INFO 17412 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2018-10-10 15:16:40.974  INFO 17412 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-10-10 15:16:40.976  INFO 17412 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-10 15:16:40.982  INFO 17412 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-10 15:16:40.989  INFO 17412 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-10-10 15:16:40.989  INFO 17412 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-10-10 15:16:41.011  INFO 17412 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-10-10 15:16:41.056  INFO 17412 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-10-10 15:16:41.331  INFO 17412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-10 15:16:41.335  INFO 17412 --- [main] com.fabe2ry.CollectionApplication        : Started CollectionApplication in 7.734 seconds (JVM running for 8.597)
+2018-10-10 15:18:22.952  INFO 16052 --- [main] com.fabe2ry.CollectionApplication        : Starting CollectionApplication on X-CDN-XIAOXQ with PID 16052 (D:\collection\sample\target\classes started by xiaoxq in D:\collection)
+2018-10-10 15:18:22.957  INFO 16052 --- [main] com.fabe2ry.CollectionApplication        : The following profiles are active: dev
+2018-10-10 15:18:23.069  INFO 16052 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8462f31: startup date [Wed Oct 10 15:18:23 CST 2018]; root of context hierarchy
+2018-10-10 15:18:26.647  INFO 16052 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d7f17397] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-10 15:18:27.672  INFO 16052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-10-10 15:18:27.707  INFO 16052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-10 15:18:27.708  INFO 16052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-10-10 15:18:27.727  INFO 16052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2018-10-10 15:18:27.728  INFO 16052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2018-10-10 15:18:27.728  INFO 16052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2018-10-10 15:18:28.819  INFO 16052 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2018-10-10 15:18:28.962  INFO 16052 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-10-10 15:18:28.962  INFO 16052 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5895 ms
+2018-10-10 15:18:29.091  INFO 16052 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-10-10 15:18:29.103  INFO 16052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-10 15:18:29.104  INFO 16052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-10 15:18:29.107  INFO 16052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-10 15:18:29.107  INFO 16052 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-10 15:18:30.410  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/add],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.add(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String,int)
+2018-10-10 15:18:30.412  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/register],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.register(java.lang.String,java.lang.String,java.lang.String)
+2018-10-10 15:18:30.413  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/update],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.update(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2018-10-10 15:18:30.413  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/delete],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.delete(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+2018-10-10 15:18:30.414  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/test],methods=[GET]}" onto public java.lang.String com.fabe2ry.controller.UserController.test() throws java.lang.Throwable
+2018-10-10 15:18:30.414  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getLogs/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllLog(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:18:30.415  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getTestExcel],methods=[GET]}" onto public java.lang.String com.fabe2ry.controller.UserController.getTestExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:18:30.419  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/login],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2018-10-10 15:18:30.421  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/exportGoodsExcel],methods=[GET]}" onto public void com.fabe2ry.controller.UserController.exportGoodsExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:18:30.421  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getGoods/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllGoods(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:18:30.422  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/importGoodsExcel],methods=[POST]}" onto public void com.fabe2ry.controller.UserController.importGoodsExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:18:30.423  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/logout],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:18:30.424  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getUsers/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getUsers(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:18:30.430  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-10-10 15:18:30.431  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-10-10 15:18:30.432  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-10-10 15:18:30.439  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-10 15:18:30.440  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:18:30.808  INFO 16052 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-10-10 15:18:30.938  INFO 16052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:18:31.185  INFO 16052 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8462f31: startup date [Wed Oct 10 15:18:23 CST 2018]; root of context hierarchy
+2018-10-10 15:18:31.258  INFO 16052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:18:31.259  INFO 16052 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:18:31.322  INFO 16052 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2018-10-10 15:18:31.678  INFO 16052 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-10-10 15:18:31.680  INFO 16052 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-10 15:18:31.688  INFO 16052 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-10 15:18:31.694  INFO 16052 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-10-10 15:18:31.695  INFO 16052 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-10-10 15:18:31.718  INFO 16052 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-10-10 15:18:31.762  INFO 16052 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-10-10 15:18:32.020  INFO 16052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-10 15:18:32.026  INFO 16052 --- [main] com.fabe2ry.CollectionApplication        : Started CollectionApplication in 9.962 seconds (JVM running for 11.111)
+2018-10-10 15:19:48.045  INFO 16052 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-10 15:19:48.046  INFO 16052 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-10 15:19:48.072  INFO 16052 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2018-10-10 15:19:48.161  INFO 16052 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-10-10 15:19:48.348  INFO 16052 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-10-10 15:24:08.136  INFO 17828 --- [main] com.fabe2ry.CollectionApplication        : Starting CollectionApplication on X-CDN-XIAOXQ with PID 17828 (D:\collection\sample\target\classes started by xiaoxq in D:\collection)
+2018-10-10 15:24:08.143  INFO 17828 --- [main] com.fabe2ry.CollectionApplication        : The following profiles are active: dev
+2018-10-10 15:24:08.210  INFO 17828 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@792b749c: startup date [Wed Oct 10 15:24:08 CST 2018]; root of context hierarchy
+2018-10-10 15:24:11.085  INFO 17828 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$db52df18] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-10 15:24:11.995  INFO 17828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-10-10 15:24:12.026  INFO 17828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-10 15:24:12.027  INFO 17828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-10-10 15:24:12.048  INFO 17828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2018-10-10 15:24:12.048  INFO 17828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2018-10-10 15:24:12.048  INFO 17828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2018-10-10 15:24:13.116  INFO 17828 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2018-10-10 15:24:13.242  INFO 17828 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-10-10 15:24:13.242  INFO 17828 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5032 ms
+2018-10-10 15:24:13.340  INFO 17828 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-10-10 15:24:13.345  INFO 17828 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-10 15:24:13.345  INFO 17828 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-10 15:24:13.346  INFO 17828 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-10 15:24:13.346  INFO 17828 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-10 15:24:14.415  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/add],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.add(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String,int)
+2018-10-10 15:24:14.419  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/register],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.register(java.lang.String,java.lang.String,java.lang.String)
+2018-10-10 15:24:14.420  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/update],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.update(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2018-10-10 15:24:14.421  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/delete],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.delete(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+2018-10-10 15:24:14.422  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/test],methods=[GET]}" onto public java.lang.String com.fabe2ry.controller.UserController.test() throws java.lang.Throwable
+2018-10-10 15:24:14.423  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getUsers/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getUsers(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:24:14.424  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getGoods/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllGoods(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:24:14.424  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/exportGoodsExcel],methods=[GET]}" onto public void com.fabe2ry.controller.UserController.exportGoodsExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:24:14.425  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/login],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2018-10-10 15:24:14.426  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getTestExcel],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getTestExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:24:14.426  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/logout],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:24:14.427  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getLogs/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllLog(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-10 15:24:14.430  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/importGoodsExcel],methods=[POST]}" onto public void com.fabe2ry.controller.UserController.importGoodsExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:24:14.439  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-10-10 15:24:14.441  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-10-10 15:24:14.442  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-10-10 15:24:14.446  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-10 15:24:14.447  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-10 15:24:14.678  INFO 17828 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-10-10 15:24:14.829  INFO 17828 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:24:15.061  INFO 17828 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@792b749c: startup date [Wed Oct 10 15:24:08 CST 2018]; root of context hierarchy
+2018-10-10 15:24:15.136  INFO 17828 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:24:15.136  INFO 17828 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-10 15:24:15.208  INFO 17828 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2018-10-10 15:24:15.547  INFO 17828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-10-10 15:24:15.549  INFO 17828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-10 15:24:15.557  INFO 17828 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-10 15:24:15.563  INFO 17828 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-10-10 15:24:15.563  INFO 17828 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-10-10 15:24:15.586  INFO 17828 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-10-10 15:24:15.631  INFO 17828 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-10-10 15:24:15.896  INFO 17828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-10 15:24:15.901  INFO 17828 --- [main] com.fabe2ry.CollectionApplication        : Started CollectionApplication in 8.504 seconds (JVM running for 9.481)
+2018-10-10 15:24:20.084  INFO 17828 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-10 15:24:20.084  INFO 17828 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-10 15:24:20.112  INFO 17828 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 28 ms
+2018-10-10 15:24:20.181  INFO 17828 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-10-10 15:24:20.392  INFO 17828 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-10-10 15:24:27.346  WARN 17828 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Failure while trying to resolve exception [org.springframework.web.HttpMediaTypeNotAcceptableException]
+
+java.lang.IllegalStateException: Cannot call sendError() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendError(ResponseFacade.java:472) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleHttpMediaTypeNotAcceptable(DefaultHandlerExceptionResolver.java:303) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.doResolveException(DefaultHandlerExceptionResolver.java:180) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:136) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:78) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1255) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1062) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) [spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2018-10-10 15:24:27.350 ERROR 17828 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Could not find acceptable representation] with root cause
+
+org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:288) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:180) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:119) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_181]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_181]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.34.jar:8.5.34]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2018-10-10 15:24:27.367  WARN 17828 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation]

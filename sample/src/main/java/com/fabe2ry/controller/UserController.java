@@ -190,15 +190,24 @@ public class UserController {
     @ApiOperation(value="获取goods测试excel", notes="")
     @WebLogAnnotation(annotationName = "获取goods测试excel")
     @GetMapping("/getTestExcel")
+//    @ResponseBody
     public void getTestExcel(HttpServletRequest request, HttpServletResponse response){
         if(!LoginHelper.checkHasLogined(request, response)){
-            return;
+//            return LoginHelper.getFailListVo("请先登陆");
+            return ;
         }
 
         Class[] classes = new Class[]{Goods.class};
         List<List> allList = ExcelUtil.createTestList(classes, 300);
         Workbook afterWookbook = ExcelUtil.createWorkBook(allList, classes);
         ExcelUtil.writeWorkBookToResponse(afterWookbook, response);
+
+//        ListVo listVo = new ListVo();
+//        listVo.setSuccess(true);
+//        listVo.setTotal(allList.get(0).size());
+//        listVo.setMessage("获取成功");
+//        listVo.setResult(allList.get(0));
+//        return listVo;
     }
 
     @ApiOperation(value="导入goods的excel", notes="")

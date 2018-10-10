@@ -4,6 +4,7 @@
 
 * 将项目导入idea后，在`collection\sample\src\main\resources\application.properties`文件中，设置`spring.profiles.active=test`
 * 启动项目，使用idea的`Built-in Webserver`启动前端界面，或者输入`http://localhost:63342/collection/sample/static/login.html`访问（端口取决于idea设置的built-in server端口）
+* 默认登陆密码：alice/alice
 
 #### 使用本地mysql数据库
 
@@ -20,6 +21,8 @@
 * 修改配置文件在`collection\sample\src\main\resources\application.properties`文件中，设置`spring.profiles.active=dev`
 
 * 启动项目，使用idea的`Built-in Webserver`启动前端界面，或者输入`http://localhost:63342/collection/sample/static/login.html`访问（端口取决于idea设置的built-in server端口）
+
+* 默认登陆密码：alice/alice
 
 ### see also
 

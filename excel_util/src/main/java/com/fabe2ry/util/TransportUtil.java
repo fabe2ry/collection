@@ -10,8 +10,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.logging.Logger;
 
 /**
@@ -109,5 +108,40 @@ public class TransportUtil {
             return;
         }
         response.addHeader("Content-Disposition", "attachment; filename=" + encodeFileName);
+    }
+
+    /**
+     * 将workbook输出到本地文件
+     * @param workbook
+     * @param localPath
+     * @param fileName
+     */
+    public static void writeWorkBookToFile(Workbook workbook, String localPath, String fileName) {
+        if(workbook == null || localPath == null || localPath.length() == 0
+                || fileName == null || fileName.length() == 0){
+            throw new TransportExpection("参数错误");
+        }
+
+        String fileFullName = localPath + File.separator + fileName;
+        File localFile = new File(fileFullName);
+        if(! localFile.getParentFile().exists()){
+            localFile.getParentFile().mkdirs();
+        }
+        if(! localFile.exists()){
+            try {
+                localFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(localFile);
+            workbook.write(fileOutputStream);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

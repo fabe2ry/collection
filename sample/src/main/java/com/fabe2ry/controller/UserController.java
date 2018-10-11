@@ -233,7 +233,8 @@ public class UserController {
                 excelService.storeGoodsList(allList.get(0));
             }
 
-            ExcelUtil.writeWorkBookToResponse(workbook, response);
+//            ExcelUtil.writeWorkBookToResponse(workbook, response);
+            ExcelUtil.writeWorkBookToFile(workbook, "d:/excel/", "test.xlsx");
 
             ListVo listVo = new ListVo();
             listVo.setSuccess(true);
@@ -242,6 +243,7 @@ public class UserController {
             listVo.setResult(allList.get(0));
             return listVo;
         }catch (RuntimeException e){
+            e.printStackTrace();
             return LoginHelper.getFailListVo(e.getMessage());
         }
     }

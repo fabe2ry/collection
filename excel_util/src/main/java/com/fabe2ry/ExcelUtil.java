@@ -36,12 +36,24 @@ public class ExcelUtil {
     }
 
     /**
+     * 将workbook输出到本地文件
+     * @param workbook
+     * @param localPath
+     * @param fileName
+     */
+    public static void writeWorkBookToFile(Workbook workbook, String localPath, String fileName){
+        TransportUtil.writeWorkBookToFile(workbook, localPath, fileName);
+    }
+
+
+    /**
      * 解析workbook，转换成为对象
      * @param workbook
      * @param classes
      */
 //    TODO:查查怎么公司和这边同步配置
     public static List<List> parseWorkbook(Workbook workbook, Class<?>[] classes){
+//        return AssembleUtil.assemble(workbook, classes);
         List<ClassSettingBean> classSettingBeans = ParseSettingUtil.parseSettingPhase(workbook, classes);
         if(classSettingBeans == null || classSettingBeans.size() <= 0){
             throw new ParseSettingException("解析注解错误，为空或者长度为0");

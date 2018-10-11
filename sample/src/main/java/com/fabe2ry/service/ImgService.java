@@ -1,5 +1,6 @@
 package com.fabe2ry.service;
 
+import com.fabe2ry.model.util.ResultVo;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,9 +10,11 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public interface ImgService {
 
-    void imgUpload(MultipartFile multipartFile);
+    ResultVo imgUpload(MultipartFile multipartFile);
 
     void imgUpload(MultipartFile[] multipartFiles);
 
-    void imgDownload();
+    ResultVo imgDownload();
+
+    ResultVo imgShow();
 }

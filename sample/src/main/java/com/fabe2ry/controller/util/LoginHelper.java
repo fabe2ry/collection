@@ -7,6 +7,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Enumeration;
 
 /**
  * Created by xiaoxq on 2018/9/17.
@@ -21,7 +22,7 @@ public class LoginHelper {
     //    添加cookie和session
     public static void addCookieAndSeesion(HttpServletRequest request, HttpServletResponse response, String userName, String userPassword){
         Cookie userNameCookie = new Cookie(COOKIE_USER_NAME, userName);
-        userNameCookie.setMaxAge(5*60);
+        userNameCookie.setMaxAge(30*60);
         userNameCookie.setPath("/");
         response.addCookie(userNameCookie);
 
@@ -56,6 +57,7 @@ public class LoginHelper {
     public static boolean checkHasLogined(HttpServletRequest request, HttpServletResponse response){
         Cookie[] cookies = request.getCookies();
         if(cookies == null){
+            System.out.println("cookie失效");
             return false;
         }
         String cookieUserName = null;
@@ -69,7 +71,9 @@ public class LoginHelper {
             if(session != null && session.getAttribute(SESSION_USER_NAME) != null && session.getAttribute(SESSION_USER_NAME).equals(cookieUserName)){
                 return true;
             }
+            System.out.println("session失效");
         }
+        System.out.println("user name失效");
         return false;
     }
 
@@ -81,8 +85,10 @@ public class LoginHelper {
         response.addCookie(userNameCookie);
 
         HttpSession session = request.getSession(false);
-        session.removeAttribute(SESSION_USER_NAME);
-        session.removeAttribute(SESSION_USER_PASSWORD);
+        Enumeration<String> enumeration = session.getAttributeNames();
+        while(enumeration.hasMoreElements()){
+            session.removeAttribute(enumeration.nextElement());
+        }
     }
 
     //    返回一个错误的ResultVo

@@ -47,11 +47,6 @@ public class ExcelUtil {
             throw new ParseSettingException("解析注解错误，为空或者长度为0");
         }
 
-//        test
-        for(ClassSettingBean classSettingBean : classSettingBeans){
-            logger.info(classSettingBean.toString());
-        }
-
         return AssembleUtil.assemble(workbook, classSettingBeans);
     }
 

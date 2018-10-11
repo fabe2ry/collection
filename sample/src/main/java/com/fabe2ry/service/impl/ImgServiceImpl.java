@@ -1,5 +1,7 @@
 package com.fabe2ry.service.impl;
 
+import com.fabe2ry.controller.util.LoginHelper;
+import com.fabe2ry.model.util.ResultVo;
 import com.fabe2ry.service.ImgService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -25,9 +27,9 @@ public class ImgServiceImpl implements ImgService {
     String imgLocalStorePath;
 
     @Override
-    public void imgUpload(MultipartFile multipartFile) {
+    public ResultVo imgUpload(MultipartFile multipartFile) {
         if(multipartFile == null || multipartFile.isEmpty()){
-            throw new NullPointerException("参数错误");
+            return LoginHelper.getFailResultVo("参数错误");
         }
 
         String imgName = multipartFile.getOriginalFilename();
@@ -36,6 +38,12 @@ public class ImgServiceImpl implements ImgService {
         String imgFileName = uuid + "-" + imgName + ".png";
 
         saveImg(multipartFile, imgUploadStorePath, imgFileName);
+
+        ResultVo resultVo = new ResultVo();
+        resultVo.setResult("http://localhost:8080/" + imgFileName);
+        resultVo.setMessage("上传成功");
+        resultVo.setSuccess(true);
+        return resultVo;
     }
 
     @Override
@@ -48,27 +56,56 @@ public class ImgServiceImpl implements ImgService {
     }
 
     @Override
-    public void imgDownload() {
-        String imgFilename = smashSeession();
-        
-        loadImg(imgFilename);
-    }
-
-    private void loadImg(String imgFilename) {
-        String imgFullPath = imgLocalStorePath + File.separator + imgFilename;
-        File img = new File(imgFullPath);
-        if(img.exists()){
-            download(img);
+    public ResultVo imgDownload() {
+        try{
+            String imgFilename = smashSeession();
+            return loadImg(imgFilename);
+        }catch (RuntimeException e){
+            return LoginHelper.getFailResultVo(e.getMessage());
         }
     }
 
-    private void download(File img) {
-        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletResponse response = servletRequestAttributes.getResponse();
+    @Override
+    public ResultVo imgShow() {
+        try{
+            String imgFilename = smashSeession();
+            String url = "http://localhost:8080/" + imgFilename;
 
-        setHeader(response, img.getName());
-        transport(response, img);
+            ResultVo resultVo = new ResultVo();
+            resultVo.setSuccess(true);
+            resultVo.setMessage("获取成功");
+            resultVo.setResult(url);
+            return resultVo;
+        }catch (RuntimeException e){
+            ResultVo resultVo = new ResultVo();
+            resultVo.setSuccess(false);
+            resultVo.setMessage(e.getMessage());
+            resultVo.setResult(null);
+            return resultVo;
+        }
     }
+
+    private ResultVo loadImg(String imgFilename) {
+        String imgFullPath = imgLocalStorePath + File.separator + imgFilename;
+        File img = new File(imgFullPath);
+        if(img.exists()){
+            ResultVo resultVo = new ResultVo();
+            resultVo.setSuccess(true);
+            resultVo.setMessage("获取成功");
+            resultVo.setResult("http://localhost:8080/" + imgFilename);
+            return resultVo;
+        }
+        return LoginHelper.getFailResultVo("文件不存在");
+    }
+
+//    private void download(File img) {
+//        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+//        HttpServletResponse response = servletRequestAttributes.getResponse();
+//
+//        setHeader(response, img.getName());
+//        transport(response, img);
+
+//    }
 
     private void transport(HttpServletResponse response, File img) {
         try {
@@ -106,9 +143,9 @@ public class ImgServiceImpl implements ImgService {
         HttpSession httpSession = httpServletRequest.getSession();
 
         if(httpSession == null || httpSession.getAttribute(SESSION_KEY_IMG_PATH) == null){
-            throw new RuntimeException("非法登陆");
+            throw new RuntimeException("没有保存图片或者session过期");
         }
-        
+
         return (String) httpSession.getAttribute(SESSION_KEY_IMG_PATH);
     }
 

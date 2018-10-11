@@ -222,23 +222,28 @@ public class UserController {
     public ListVo importGoodsExcel(HttpServletRequest request, HttpServletResponse response){
         if(!LoginHelper.checkHasLogined(request, response)){
             return LoginHelper.getFailListVo("请先登陆");
-//            return ;
         }
 
-        Class[] classes = new Class[]{Goods.class};
-        Workbook workbook = ExcelUtil.getWorkbookFromRequest(request);
-        List<List> allList = ExcelUtil.parseWorkbook(workbook, classes);
-        if(allList != null && allList.get(0) != null){
-            excelService.storeGoodsList(allList.get(0));
-        }
-        ExcelUtil.writeWorkBookToResponse(workbook, response);
+        try{
+            Class[] classes = new Class[]{Goods.class};
+            Workbook workbook = ExcelUtil.getWorkbookFromRequest(request);
 
-        ListVo listVo = new ListVo();
-        listVo.setSuccess(true);
-        listVo.setTotal(allList.get(0).size());
-        listVo.setMessage("上传成功");
-        listVo.setResult(allList.get(0));
-        return listVo;
+            List<List> allList = ExcelUtil.parseWorkbook(workbook, classes);
+            if(allList != null && allList.get(0) != null){
+                excelService.storeGoodsList(allList.get(0));
+            }
+
+            ExcelUtil.writeWorkBookToResponse(workbook, response);
+
+            ListVo listVo = new ListVo();
+            listVo.setSuccess(true);
+            listVo.setTotal(allList.get(0).size());
+            listVo.setMessage("上传成功");
+            listVo.setResult(allList.get(0));
+            return listVo;
+        }catch (RuntimeException e){
+            return LoginHelper.getFailListVo(e.getMessage());
+        }
     }
 
     @ApiOperation(value="获得Goods的列表", notes="")
@@ -268,33 +273,44 @@ public class UserController {
     @ApiOperation(value = "上传图片")
     @WebLogAnnotation(annotationName = "上传图片")
     @PostMapping("/imgUplaod")
-    public void imgUpload(HttpServletRequest request, HttpServletResponse response, @RequestParam("file") MultipartFile multipartFile){
-//        if(!LoginHelper.checkHasLogined(request, response)){
-//            return;
-//        }
-        imgService.imgUpload(multipartFile);
+    public ResultVo imgUpload(HttpServletRequest request, HttpServletResponse response, @RequestParam("file") MultipartFile multipartFile){
+        if(!LoginHelper.checkHasLogined(request, response)){
+            return LoginHelper.getFailResultVo("请先登陆");
+        }
+        return imgService.imgUpload(multipartFile);
     }
 
-    @ApiOperation(value = "上传多个图片")
-    @WebLogAnnotation(annotationName = "上传多个图片")
-    @PostMapping("/multiImgUpload")
-    public void multiImgUpload(HttpServletRequest request, HttpServletResponse response, @RequestParam("file") MultipartFile[] multipartFiles){
-//        if(!LoginHelper.checkHasLogined(request, response)){
-//            return;
-//        }
-        imgService.imgUpload(multipartFiles);
-    }
+//    @ApiOperation(value = "上传多个图片")
+//    @WebLogAnnotation(annotationName = "上传多个图片")
+//    @PostMapping("/multiImgUpload")
+//    public void multiImgUpload(HttpServletRequest request, HttpServletResponse response, @RequestParam("file") MultipartFile[] multipartFiles){
+////        if(!LoginHelper.checkHasLogined(request, response)){
+////            return;
+////        }
+//        imgService.imgUpload(multipartFiles);
+//    }
 
 
     @ApiOperation(value = "下载图片")
     @WebLogAnnotation(annotationName = "下载图片")
     @GetMapping("/imgDownload")
-    public void imgDownload(HttpServletRequest request, HttpServletResponse response){
+    public ResultVo imgDownload(HttpServletRequest request, HttpServletResponse response){
         if(!LoginHelper.checkHasLogined(request, response)){
-            return;
+            return LoginHelper.getFailResultVo("请先登陆");
         }
 
-        imgService.imgDownload();
+        return imgService.imgDownload();
+    }
+
+    @ApiOperation(value = "展示图片")
+    @WebLogAnnotation(annotationName = "展示图片")
+    @GetMapping("/imgShow")
+    public ResultVo imgShow(HttpServletRequest request, HttpServletResponse response){
+        if(!LoginHelper.checkHasLogined(request, response)){
+            return LoginHelper.getFailResultVo("请先登陆");
+        }
+
+        return imgService.imgShow();
     }
 
 

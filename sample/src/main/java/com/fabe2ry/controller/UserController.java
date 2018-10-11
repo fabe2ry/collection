@@ -7,6 +7,7 @@ import com.fabe2ry.model.example.Goods;
 import com.fabe2ry.model.util.ListVo;
 import com.fabe2ry.model.util.ResultVo;
 import com.fabe2ry.service.ExcelService;
+import com.fabe2ry.service.ImgService;
 import com.fabe2ry.service.LogService;
 import com.fabe2ry.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
@@ -15,6 +16,7 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,6 +41,9 @@ public class UserController {
 
     @Autowired
     ExcelService excelService;
+
+    @Autowired
+    ImgService imgService;
 
     @WebLogAnnotation(annotationName = "测试")
     @GetMapping("/test")
@@ -258,6 +263,40 @@ public class UserController {
         }
         excelService.exportGoodsExcel(request, response);
     }
+
+
+    @ApiOperation(value = "上传图片")
+    @WebLogAnnotation(annotationName = "上传图片")
+    @PostMapping("/imgUplaod")
+    public void imgUpload(HttpServletRequest request, HttpServletResponse response, @RequestParam("file") MultipartFile multipartFile){
+//        if(!LoginHelper.checkHasLogined(request, response)){
+//            return;
+//        }
+        imgService.imgUpload(multipartFile);
+    }
+
+    @ApiOperation(value = "上传多个图片")
+    @WebLogAnnotation(annotationName = "上传多个图片")
+    @PostMapping("/multiImgUpload")
+    public void multiImgUpload(HttpServletRequest request, HttpServletResponse response, @RequestParam("file") MultipartFile[] multipartFiles){
+//        if(!LoginHelper.checkHasLogined(request, response)){
+//            return;
+//        }
+        imgService.imgUpload(multipartFiles);
+    }
+
+
+    @ApiOperation(value = "下载图片")
+    @WebLogAnnotation(annotationName = "下载图片")
+    @GetMapping("/imgDownload")
+    public void imgDownload(HttpServletRequest request, HttpServletResponse response){
+        if(!LoginHelper.checkHasLogined(request, response)){
+            return;
+        }
+
+        imgService.imgDownload();
+    }
+
 
 
 

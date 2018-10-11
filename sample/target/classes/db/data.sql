@@ -1,0 +1,1 @@
+INSERT INTO `user` (`id`, `account`, `password`, `name`, `privilege`) VALUES (1, 'alice', 'alice', 'alice', 10)

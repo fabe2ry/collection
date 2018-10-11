@@ -96,7 +96,7 @@ public class WebLogAspect {
             logModel.setType("ERROR");
             logModel.setException(e.getMessage());
 //            e.printStackTrace();
-//            throw e;
+            throw e;
         }
 
 //        end time

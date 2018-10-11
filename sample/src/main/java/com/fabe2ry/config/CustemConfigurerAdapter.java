@@ -13,4 +13,6 @@ public class CustemConfigurerAdapter extends WebMvcConfigurerAdapter{
 //    public void addInterceptors(InterceptorRegistry registry) {
 //        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**");
 //    }
+
+
 }

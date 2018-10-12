@@ -29,11 +29,17 @@ public class RowMistaken extends RuntimeException {
     @Override
     public String getMessage() {
 //        return super.getMessage();
-        StringBuilder stringBuilder = new StringBuilder("sheet:" + sheetName + " row:" + rowIndex + "   ");
-        for(CellMistaken cellMistaken : list){
-            stringBuilder.append(cellMistaken.getMessage() + "   ");
+        StringBuilder stringBuilder = new StringBuilder("sheet:" + sheetName + " row:" + (rowIndex + 1) + "   ");
+        stringBuilder.append("{");
+        for(int i = 0; i < list.size(); i ++){
+            CellMistaken cellMistaken = list.get(i);
+            if(i != list.size() - 1){
+                stringBuilder.append(cellMistaken.getMessage() + ", ");
+            }else{
+                stringBuilder.append(cellMistaken.getMessage());
+            }
         }
-
+        stringBuilder.append("}");
         return stringBuilder.toString();
     }
 }

@@ -16,12 +16,14 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 /**
@@ -29,7 +31,7 @@ import java.util.logging.Logger;
  */
 @RestController
 @RequestMapping("/api/user/")
-@CrossOrigin(origins = "http://localhost:63342/", maxAge = 100)
+@CrossOrigin(origins = "http://localhost:63342/", maxAge = 100, exposedHeaders = {"Content-Disposition"})
 public class UserController {
 
     Logger logger = Logger.getLogger(UserController.class.getName());
@@ -45,6 +47,9 @@ public class UserController {
 
     @Autowired
     ImgService imgService;
+
+    @Value("${excel.local.path}")
+    String excelLocalPath;
 
     @WebLogAnnotation(annotationName = "测试")
     @GetMapping("/test")
@@ -216,11 +221,11 @@ public class UserController {
 //        return listVo;
     }
 
-    @ApiOperation(value="导入goods的excel", notes="")
+    @ApiOperation(value="导入goods的excel", notes="会直接返回excel文件")
     @WebLogAnnotation(annotationName = "导入goods的excel")
-    @PostMapping("/importGoodsExcel")
+    @PostMapping("/importGoodsExcelWithDirectReturn")
     @ResponseBody
-    public ListVo importGoodsExcel(HttpServletRequest request, HttpServletResponse response){
+    public ListVo importGoodsExcelWithDirectReturn(HttpServletRequest request, HttpServletResponse response){
         if(!LoginHelper.checkHasLogined(request, response)){
             return LoginHelper.getFailListVo("请先登陆");
         }
@@ -230,19 +235,65 @@ public class UserController {
 
             SheetResult sheetResult = ExcelUtil.parseWorkbook(workbook, Goods.class);
             if(sheetResult != null){
-                excelService.storeGoodsList(sheetResult.getNormalObjectList());
-//                ExcelUtil.writeWorkBookToResponse(workbook, response);
-                ExcelUtil.writeWorkBookToFile(workbook, "d:/excel/", "test.xlsx");
-
-                ListVo listVo = new ListVo();
-                listVo.setSuccess(! sheetResult.contailError());
-                listVo.setTotal(sheetResult.getTotalRow());
-                listVo.setMessage("上传成功");
-                listVo.setResult(sheetResult.getNormalObjectList());
-                return listVo;
+                if(! sheetResult.contailError()){
+                    excelService.storeGoodsList(sheetResult.getNormalObjectList());
+                    ListVo listVo = new ListVo();
+                    listVo.setSuccess(! sheetResult.contailError());
+                    listVo.setTotal(sheetResult.getTotalRow());
+                    listVo.setMessage("上传成功，总共上传条数：" + sheetResult.getTotalRow());
+                    listVo.setResult(sheetResult.getNormalObjectList());
+                    return listVo;
+                }else{
+                    ExcelUtil.writeWorkBookToResponse(workbook, response);
+                    return null;
+                }
             }
+            return LoginHelper.getFailListVo("无法创建sheet result，设置存在错误");
+        }catch (RuntimeException e){
+            e.printStackTrace();
+            return LoginHelper.getFailListVo(e.getMessage());
+        }
+    }
 
-            return LoginHelper.getFailListVo("无法创建list，设置存在错误");
+    @ApiOperation(value="导入goods的excel", notes="不会直接返回excel文件，而是返回excel文件链接")
+    @WebLogAnnotation(annotationName = "导入goods的excel")
+    @PostMapping("/importGoodsExcelWithReturn")
+    @ResponseBody
+    public ListVo importGoodsExcelWithReturn(HttpServletRequest request, HttpServletResponse response){
+        if(!LoginHelper.checkHasLogined(request, response)){
+            return LoginHelper.getFailListVo("请先登陆");
+        }
+
+        try{
+            Workbook workbook = ExcelUtil.getWorkbookFromRequest(request);
+
+            SheetResult sheetResult = ExcelUtil.parseWorkbook(workbook, Goods.class);
+            if(sheetResult != null){
+                if(! sheetResult.contailError()){
+                    excelService.storeGoodsList(sheetResult.getNormalObjectList());
+                    ListVo listVo = new ListVo();
+                    listVo.setSuccess(! sheetResult.contailError());
+                    listVo.setTotal(sheetResult.getTotalRow());
+                    listVo.setMessage("上传成功，总共上传条数：" + sheetResult.getTotalRow());
+                    listVo.setResult(sheetResult.getNormalObjectList());
+                    return listVo;
+                }else{
+                    String localPath = excelLocalPath;
+                    String fileName = UUID.randomUUID().toString() + ".xlsx";
+                    String prefix = "http://localhost:8080/";
+
+                    ExcelUtil.writeWorkBookToFile(workbook, localPath, fileName);
+                    String url = prefix + fileName;
+
+                    ListVo listVo = new ListVo();
+                    listVo.setSuccess(! sheetResult.contailError());
+                    listVo.setTotal(sheetResult.getTotalRow());
+                    listVo.setMessage("上传失败, 包含错误条数：" + sheetResult.getErrorRow() + "   " + sheetResult.getErrorMessage());
+                    listVo.setResult(url);
+                    return listVo;
+                }
+            }
+            return LoginHelper.getFailListVo("无法创建sheet result，设置存在错误");
         }catch (RuntimeException e){
             e.printStackTrace();
             return LoginHelper.getFailListVo(e.getMessage());

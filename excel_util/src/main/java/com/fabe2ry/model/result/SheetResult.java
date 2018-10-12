@@ -91,5 +91,20 @@ public class SheetResult {
         return errorRowList;
     }
 
+    public String getErrorMessage(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("{");
+        for(int i = 0; i < errorRowList.size(); i ++){
+            RowResult failResult = errorRowList.get(i);
+            if(i != errorRowList.size() - 1){
+                stringBuilder.append("第" + (i + 1) + "个错误：" + failResult.getErrorMessage() + ", ");
+            }else{
+                stringBuilder.append("第" + (i + 1) + "个错误：" + failResult.getErrorMessage());
+            }
+        }
+        stringBuilder.append("}");
+        return stringBuilder.toString();
+    }
+
 
 }

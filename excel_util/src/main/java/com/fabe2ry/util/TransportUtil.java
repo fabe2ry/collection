@@ -97,7 +97,8 @@ public class TransportUtil {
      */
     private static void setResponse(HttpServletResponse response, String downloadFileName) {
 //        设置header
-        response.setContentType("application/octet-stream");
+//        response.setContentType("application/octet-stream");
+        response.setContentType("application/vnd.ms-excel;charset=utf-8");
 
 //        处理文件中文名
         String encodeFileName = null;
@@ -138,6 +139,7 @@ public class TransportUtil {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(localFile);
             workbook.write(fileOutputStream);
+            fileOutputStream.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

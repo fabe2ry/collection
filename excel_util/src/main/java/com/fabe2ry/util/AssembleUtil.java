@@ -7,6 +7,8 @@ import com.fabe2ry.Exception.RowMistaken;
 import com.fabe2ry.model.ClassSettingBean;
 import com.fabe2ry.model.ColSettingBean;
 import com.fabe2ry.model.SheetSettingBean;
+import com.fabe2ry.model.result.RowResult;
+import com.fabe2ry.model.result.SheetResult;
 import com.fabe2ry.type.ExcelColumnType;
 import org.apache.poi.ss.usermodel.*;
 
@@ -31,7 +33,7 @@ public class AssembleUtil {
      * @param classes
      * @return
      */
-    public static List<List> assemble(Workbook workbook, Class[] classes){
+    public static List<SheetResult> assemble(Workbook workbook, Class[] classes){
         if(workbook == null || classes == null){
             throw new NullPointerException();
         }
@@ -39,7 +41,7 @@ public class AssembleUtil {
         return assembleWithClasses(workbook, classes);
     }
 
-    public static List assemble(Workbook workbook, Class clazz){
+    public static SheetResult assemble(Workbook workbook, Class clazz){
         if(workbook == null || clazz == null){
             throw new NullPointerException();
         }
@@ -54,49 +56,49 @@ public class AssembleUtil {
      * @param classes
      * @return
      */
-    private static List<List> assembleWithClasses(Workbook workbook, Class[] classes) {
+    private static List<SheetResult> assembleWithClasses(Workbook workbook, Class[] classes) {
         if(workbook == null || classes == null){
             throw new NullPointerException();
         }
-        List<List> allList = null;
+        List<SheetResult> allList = null;
         if(canAssembleWithClasses(workbook, classes)){
             return startAssembleWithClasses(workbook, classes);
         }
         return allList;
     }
 
-    private static List<List> startAssembleWithClasses(Workbook workbook, Class[] classes) {
-        List<List> allList = null;
+    private static List<SheetResult> startAssembleWithClasses(Workbook workbook, Class[] classes) {
+        List<SheetResult> allResult = null;
         for(Class clazz : classes){
-            List list = assembleWithClass(workbook, clazz);
+            SheetResult sheetResult = assembleWithClass(workbook, clazz);
 
-            if(list != null){
-                if(allList == null){
-                    allList = new ArrayList<>();
+            if(sheetResult != null){
+                if(allResult == null){
+                    allResult = new ArrayList<>();
                 }
-                allList.add(list);
+                allResult.add(sheetResult);
             }
         }
-        return allList;
+        return allResult;
     }
 
-    private static List assembleWithClass(Workbook workbook, Class clazz) {
+    private static SheetResult assembleWithClass(Workbook workbook, Class clazz) {
         ClassSettingBean classSettingBean = parseSettingFromClass(clazz);
         return assembleWithBean(workbook, classSettingBean);
     }
 
-    private static List assembleWithBean(Workbook workbook, ClassSettingBean classSettingBean) {
+    private static SheetResult assembleWithBean(Workbook workbook, ClassSettingBean classSettingBean) {
         if(canAssembleWithBean(workbook, classSettingBean)){
             return startAssembleBean(workbook, classSettingBean);
         }
         return null;
     }
 
-    private static List startAssembleBean(Workbook workbook, ClassSettingBean classSettingBean) {
+    private static SheetResult startAssembleBean(Workbook workbook, ClassSettingBean classSettingBean) {
         return loadSheet(workbook, classSettingBean);
     }
-//
-    private static List loadSheet(Workbook workbook, ClassSettingBean classSettingBean) {
+
+    private static SheetResult loadSheet(Workbook workbook, ClassSettingBean classSettingBean) {
         String requireSheetName = classSettingBean.getSheetSettingBean().getSheetName().trim();
         if(requireSheetName == null || requireSheetName.length() == 0){
             throw new AssembleException("表名为空，或者不存在");
@@ -108,11 +110,12 @@ public class AssembleUtil {
         return loadSheet(sheet, classSettingBean);
     }
 
-    private static List loadSheet(Sheet sheet, ClassSettingBean classSettingBean){
+    private static SheetResult loadSheet(Sheet sheet, ClassSettingBean classSettingBean){
         if(canLoadSheet(sheet, classSettingBean)){
             preLoadSheet(sheet, classSettingBean);
 
-            return startLoadSheet(sheet, classSettingBean);
+            List<RowResult> list =  startLoadSheet(sheet, classSettingBean);
+            return new SheetResult(sheet.getSheetName(), list);
         }
         return null;
     }
@@ -192,13 +195,13 @@ public class AssembleUtil {
         }
     }
 
-    private static List startLoadSheet(Sheet sheet, ClassSettingBean classSettingBean) {
-        List list = null;
+    private static List<RowResult> startLoadSheet(Sheet sheet, ClassSettingBean classSettingBean) {
+        List<RowResult> list = null;
 
         for(Row row : sheet){
 //            跳过header row和空行
             if(isHeaderRow(row, classSettingBean)){
-                list = new ArrayList();
+                list = new ArrayList<>();
                 continue;
             }
 
@@ -206,21 +209,17 @@ public class AssembleUtil {
                 continue;
             }
 
-            Object object =  loadRow(sheet, row, classSettingBean);
-            if(object != null){
-                if(list == null){
-                    list = new ArrayList();
-                }
-                list.add(object);
-            }
+            RowResult rowResult =  loadRow(sheet, row, classSettingBean);
+            list.add(rowResult);
         }
 
         return list;
     }
 
-    private static Object loadRow(Sheet sheet, Row row, ClassSettingBean classSettingBean) {
+    private static RowResult loadRow(Sheet sheet, Row row, ClassSettingBean classSettingBean) {
         preLoadObject(sheet, row, classSettingBean);
 
+        RowResult rowResult = new RowResult();
         Object object = null;
         try{
             object = startLoadObject(sheet, row, classSettingBean);
@@ -229,11 +228,29 @@ public class AssembleUtil {
             rowMistaken.printStackTrace();
 
             handleRowMistaken(sheet, row, classSettingBean, rowMistaken);
+
+            rowResult.setNormal(false);
+            rowResult.setRowIndex(row.getRowNum());
+            rowResult.setRowErrorCount(rowMistaken.getCellMistakenCount());
+            rowResult.setErrorMessage(rowMistaken.getMessage());
+            rowResult.setObject(null);
+            return rowResult;
         }
 
-//        postLoadObject();
-
-        return object;
+        if(object == null){
+            rowResult.setNormal(false);
+            rowResult.setRowIndex(row.getRowNum());
+            rowResult.setRowErrorCount(0);
+            rowResult.setErrorMessage("无法创建对象");
+            rowResult.setObject(null);
+        }else{
+            rowResult.setNormal(true);
+            rowResult.setRowIndex(row.getRowNum());
+            rowResult.setRowErrorCount(0);
+            rowResult.setErrorMessage(null);
+            rowResult.setObject(object);
+        }
+        return rowResult;
     }
 
     private static void handleRowMistaken(Sheet sheet, Row row, ClassSettingBean classSettingBean, RowMistaken rowMistaken) {

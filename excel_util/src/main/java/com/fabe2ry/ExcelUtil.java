@@ -2,6 +2,7 @@ package com.fabe2ry;
 
 import com.fabe2ry.Exception.ParseSettingException;
 import com.fabe2ry.model.ClassSettingBean;
+import com.fabe2ry.model.result.SheetResult;
 import com.fabe2ry.util.*;
 import org.apache.poi.ss.usermodel.Workbook;
 
@@ -52,11 +53,11 @@ public class ExcelUtil {
      * @param classes
      */
 //    TODO:查查怎么公司和这边同步配置
-    public static List<List> parseWorkbook(Workbook workbook, Class<?>[] classes){
+    public static List<SheetResult> parseWorkbook(Workbook workbook, Class<?>[] classes){
         return AssembleUtil.assemble(workbook, classes);
     }
 
-    public static List parseWorkbook(Workbook workbook, Class clazz){
+    public static SheetResult parseWorkbook(Workbook workbook, Class clazz){
         return AssembleUtil.assemble(workbook, clazz);
     }
 

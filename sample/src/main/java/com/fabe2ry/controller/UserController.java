@@ -4,6 +4,7 @@ import com.fabe2ry.ExcelUtil;
 import com.fabe2ry.aop.annotation.WebLogAnnotation;
 import com.fabe2ry.controller.util.LoginHelper;
 import com.fabe2ry.model.example.Goods;
+import com.fabe2ry.model.result.SheetResult;
 import com.fabe2ry.model.util.ListVo;
 import com.fabe2ry.model.util.ResultVo;
 import com.fabe2ry.service.ExcelService;
@@ -227,17 +228,17 @@ public class UserController {
         try{
             Workbook workbook = ExcelUtil.getWorkbookFromRequest(request);
 
-            List list = ExcelUtil.parseWorkbook(workbook, Goods.class);
-            if(list != null){
-                excelService.storeGoodsList(list);
+            SheetResult sheetResult = ExcelUtil.parseWorkbook(workbook, Goods.class);
+            if(sheetResult != null){
+                excelService.storeGoodsList(sheetResult.getNormalObjectList());
 //                ExcelUtil.writeWorkBookToResponse(workbook, response);
                 ExcelUtil.writeWorkBookToFile(workbook, "d:/excel/", "test.xlsx");
 
                 ListVo listVo = new ListVo();
-                listVo.setSuccess(true);
-                listVo.setTotal(list.size());
+                listVo.setSuccess(! sheetResult.contailError());
+                listVo.setTotal(sheetResult.getTotalRow());
                 listVo.setMessage("上传成功");
-                listVo.setResult(list);
+                listVo.setResult(sheetResult.getNormalObjectList());
                 return listVo;
             }
 

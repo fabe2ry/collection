@@ -57,7 +57,7 @@ public class LoginHelper {
     public static boolean checkHasLogined(HttpServletRequest request, HttpServletResponse response){
         Cookie[] cookies = request.getCookies();
         if(cookies == null){
-            System.out.println("cookie失效");
+//            System.out.println("cookie失效");
             return false;
         }
         String cookieUserName = null;
@@ -71,9 +71,9 @@ public class LoginHelper {
             if(session != null && session.getAttribute(SESSION_USER_NAME) != null && session.getAttribute(SESSION_USER_NAME).equals(cookieUserName)){
                 return true;
             }
-            System.out.println("session失效");
+//            System.out.println("session失效");
         }
-        System.out.println("user name失效");
+//        System.out.println("user name失效");
         return false;
     }
 

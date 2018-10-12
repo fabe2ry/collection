@@ -88,6 +88,13 @@
 
 
 <script>
+    axios.interceptors.response.use(function (response) {
+        return response;
+    }, function (error) {
+        window.location.href="./logout.html";
+        return Promise.reject(error);
+    });
+
     new Vue({
         el : '#app',
         data : {

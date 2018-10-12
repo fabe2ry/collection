@@ -117,6 +117,13 @@
 
 
 <script>
+    axios.interceptors.response.use(function (response) {
+        return response;
+    }, function (error) {
+        window.location.href="./logout.html";
+        return Promise.reject(error);
+    });
+
     new Vue({
         el : '#app',
         data : {
@@ -149,7 +156,6 @@
 //                    link.click()
 //                    console.log(url)
 
-                    alert(response.data.success)
                     if(response.data.success){
                         window.location.href=response.data.result
 

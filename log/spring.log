@@ -7946,3 +7946,184 @@ org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acce
 2018-10-12 16:36:41.034  INFO 7320 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : 56
 2018-10-12 16:36:47.035  INFO 7320 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
 2018-10-12 16:36:47.035  INFO 7320 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : 62
+2018-10-12 16:36:52.133  INFO 13936 --- [main] com.fabe2ry.CollectionApplication        : Starting CollectionApplication on X-CDN-XIAOXQ with PID 13936 (D:\collection\sample\target\classes started by xiaoxq in D:\collection)
+2018-10-12 16:36:52.137  INFO 13936 --- [main] com.fabe2ry.CollectionApplication        : The following profiles are active: test
+2018-10-12 16:36:52.222  INFO 13936 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@19932c16: startup date [Fri Oct 12 16:36:52 CST 2018]; root of context hierarchy
+2018-10-12 16:36:55.261  INFO 13936 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$edcd8655] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-12 16:36:56.433  INFO 13936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-10-12 16:36:56.471  INFO 13936 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-12 16:36:56.471  INFO 13936 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-10-12 16:36:56.478  INFO 13936 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2018-10-12 16:36:56.478  INFO 13936 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2018-10-12 16:36:56.478  INFO 13936 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2018-10-12 16:36:57.567  INFO 13936 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2018-10-12 16:36:57.784  INFO 13936 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-10-12 16:36:57.784  INFO 13936 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5562 ms
+2018-10-12 16:36:57.908  INFO 13936 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-10-12 16:36:57.910  INFO 13936 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2018-10-12 16:36:57.914  INFO 13936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-12 16:36:57.915  INFO 13936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-12 16:36:57.915  INFO 13936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-12 16:36:57.915  INFO 13936 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-12 16:36:58.146  INFO 13936 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-10-12 16:36:58.330  INFO 13936 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-10-12 16:36:58.347  INFO 13936 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/schema.sql]
+2018-10-12 16:36:58.377  INFO 13936 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/schema.sql] in 30 ms.
+2018-10-12 16:36:58.381  INFO 13936 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/data.sql]
+2018-10-12 16:36:58.385  INFO 13936 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/data.sql] in 4 ms.
+2018-10-12 16:36:59.765  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/add],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.add(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String,int)
+2018-10-12 16:36:59.768  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/register],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.register(java.lang.String,java.lang.String,java.lang.String)
+2018-10-12 16:36:59.769  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/update],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.update(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2018-10-12 16:36:59.770  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/delete],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.delete(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+2018-10-12 16:36:59.771  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/test],methods=[GET]}" onto public java.lang.String com.fabe2ry.controller.UserController.test() throws java.lang.Throwable
+2018-10-12 16:36:59.772  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/importGoodsExcelWithReturn],methods=[POST]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.importGoodsExcelWithReturn(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 16:36:59.772  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/importGoodsExcelWithDirectReturn],methods=[POST]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.importGoodsExcelWithDirectReturn(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 16:36:59.773  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/imgShow],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.imgShow(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 16:36:59.775  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getLogs/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllLog(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-12 16:36:59.776  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getTestExcel],methods=[GET]}" onto public void com.fabe2ry.controller.UserController.getTestExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 16:36:59.777  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/exportGoodsExcel],methods=[GET]}" onto public void com.fabe2ry.controller.UserController.exportGoodsExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 16:36:59.778  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/login],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2018-10-12 16:36:59.779  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/imgDownload],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.imgDownload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 16:36:59.780  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/logout],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 16:36:59.781  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getGoods/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllGoods(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-12 16:36:59.782  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/imgUplaod],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.imgUpload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.multipart.MultipartFile)
+2018-10-12 16:36:59.785  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getUsers/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getUsers(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-12 16:36:59.795  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-10-12 16:36:59.798  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-10-12 16:36:59.800  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-10-12 16:36:59.804  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-12 16:36:59.805  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 16:37:00.280  INFO 13936 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-10-12 16:37:00.517  INFO 13936 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-12 16:37:00.921  INFO 13936 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@19932c16: startup date [Fri Oct 12 16:36:52 CST 2018]; root of context hierarchy
+2018-10-12 16:37:01.008  INFO 13936 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-12 16:37:01.008  INFO 13936 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-12 16:37:01.594  INFO 13936 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-10-12 16:37:01.597  INFO 13936 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-12 16:37:01.606  INFO 13936 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-12 16:37:01.619  INFO 13936 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-10-12 16:37:01.626  INFO 13936 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-10-12 16:37:01.684  INFO 13936 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-10-12 16:37:01.739  INFO 13936 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-10-12 16:37:01.980  INFO 13936 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-10-12 16:37:01.991  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 16:37:02.049  INFO 13936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-12 16:37:02.058  INFO 13936 --- [main] com.fabe2ry.CollectionApplication        : Started CollectionApplication in 10.738 seconds (JVM running for 11.759)
+2018-10-12 16:42:02.004  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 16:47:01.988  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 16:52:01.990  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 16:57:01.989  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:02:02.005  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:07:02.016  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:12:02.026  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:17:02.034  INFO 13936 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:23:27.378  INFO 23704 --- [main] com.fabe2ry.CollectionApplication        : Starting CollectionApplication on X-CDN-XIAOXQ with PID 23704 (D:\collection\sample\target\classes started by xiaoxq in D:\collection)
+2018-10-12 17:23:27.383  INFO 23704 --- [main] com.fabe2ry.CollectionApplication        : The following profiles are active: test
+2018-10-12 17:23:27.459  INFO 23704 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@302c971f: startup date [Fri Oct 12 17:23:27 CST 2018]; root of context hierarchy
+2018-10-12 17:23:30.419  INFO 23704 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a07e26c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-12 17:23:31.548  INFO 23704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-10-12 17:23:31.585  INFO 23704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-12 17:23:31.586  INFO 23704 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-10-12 17:23:31.593  INFO 23704 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2018-10-12 17:23:31.594  INFO 23704 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2018-10-12 17:23:31.594  INFO 23704 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2018-10-12 17:23:32.731  INFO 23704 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2018-10-12 17:23:32.918  INFO 23704 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-10-12 17:23:32.918  INFO 23704 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5460 ms
+2018-10-12 17:23:33.073  INFO 23704 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-10-12 17:23:33.076  INFO 23704 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet webServlet mapped to [/h2-console/*]
+2018-10-12 17:23:33.080  INFO 23704 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-12 17:23:33.081  INFO 23704 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-12 17:23:33.081  INFO 23704 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-12 17:23:33.081  INFO 23704 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-12 17:23:33.241  INFO 23704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-10-12 17:23:33.357  INFO 23704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-10-12 17:23:33.375  INFO 23704 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/schema.sql]
+2018-10-12 17:23:33.400  INFO 23704 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/schema.sql] in 25 ms.
+2018-10-12 17:23:33.402  INFO 23704 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/data.sql]
+2018-10-12 17:23:33.407  INFO 23704 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/data.sql] in 5 ms.
+2018-10-12 17:23:34.627  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/add],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.add(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String,int)
+2018-10-12 17:23:34.629  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/register],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.register(java.lang.String,java.lang.String,java.lang.String)
+2018-10-12 17:23:34.629  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/update],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.update(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2018-10-12 17:23:34.630  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/delete],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.delete(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+2018-10-12 17:23:34.631  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/test],methods=[GET]}" onto public java.lang.String com.fabe2ry.controller.UserController.test() throws java.lang.Throwable
+2018-10-12 17:23:34.632  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/importGoodsExcelWithDirectReturn],methods=[POST]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.importGoodsExcelWithDirectReturn(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 17:23:34.632  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/importGoodsExcelWithReturn],methods=[POST]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.importGoodsExcelWithReturn(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 17:23:34.633  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getUsers/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getUsers(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-12 17:23:34.633  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/imgUplaod],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.imgUpload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.multipart.MultipartFile)
+2018-10-12 17:23:34.634  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/exportGoodsExcel],methods=[GET]}" onto public void com.fabe2ry.controller.UserController.exportGoodsExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 17:23:34.634  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/login],methods=[POST]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.login(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2018-10-12 17:23:34.634  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getGoods/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllGoods(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-12 17:23:34.635  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/imgDownload],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.imgDownload(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 17:23:34.636  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/imgShow],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.imgShow(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 17:23:34.636  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/logout],methods=[GET]}" onto public com.fabe2ry.model.util.ResultVo com.fabe2ry.controller.UserController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 17:23:34.637  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getTestExcel],methods=[GET]}" onto public void com.fabe2ry.controller.UserController.getTestExcel(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 17:23:34.639  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/getLogs/{pageIndex}/{pageSize}],methods=[GET]}" onto public com.fabe2ry.model.util.ListVo com.fabe2ry.controller.UserController.getAllLog(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,int,int)
+2018-10-12 17:23:34.645  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-10-12 17:23:34.646  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-10-12 17:23:34.647  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-10-12 17:23:34.650  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-12 17:23:34.651  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-12 17:23:35.033  INFO 23704 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-10-12 17:23:35.168  INFO 23704 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-12 17:23:35.391  INFO 23704 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@302c971f: startup date [Fri Oct 12 17:23:27 CST 2018]; root of context hierarchy
+2018-10-12 17:23:35.463  INFO 23704 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-12 17:23:35.463  INFO 23704 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-12 17:23:36.047  INFO 23704 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-10-12 17:23:36.050  INFO 23704 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-12 17:23:36.062  INFO 23704 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-12 17:23:36.068  INFO 23704 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-10-12 17:23:36.069  INFO 23704 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-10-12 17:23:36.094  INFO 23704 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-10-12 17:23:36.141  INFO 23704 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-10-12 17:23:36.403  INFO 23704 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-10-12 17:23:36.411  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:23:36.447  INFO 23704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-12 17:23:36.452  INFO 23704 --- [main] com.fabe2ry.CollectionApplication        : Started CollectionApplication in 9.86 seconds (JVM running for 10.961)
+2018-10-12 17:23:53.225  INFO 23704 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-12 17:23:53.225  INFO 23704 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-12 17:23:53.252  INFO 23704 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2018-10-12 17:23:53.275  INFO 23704 --- [http-nio-8080-exec-2] com.fabe2ry.interceptor.MyInterceptor    : preHandle
+2018-10-12 17:23:53.275  INFO 23704 --- [http-nio-8080-exec-1] com.fabe2ry.interceptor.MyInterceptor    : preHandle
+2018-10-12 17:23:53.453  INFO 23704 --- [http-nio-8080-exec-1] com.fabe2ry.interceptor.MyInterceptor    : postHandle
+2018-10-12 17:23:53.453  INFO 23704 --- [http-nio-8080-exec-1] com.fabe2ry.interceptor.MyInterceptor    : afterCompletion
+2018-10-12 17:23:53.453  INFO 23704 --- [http-nio-8080-exec-2] com.fabe2ry.interceptor.MyInterceptor    : postHandle
+2018-10-12 17:23:53.453  INFO 23704 --- [http-nio-8080-exec-2] com.fabe2ry.interceptor.MyInterceptor    : afterCompletion
+2018-10-12 17:23:55.289  INFO 23704 --- [http-nio-8080-exec-4] com.fabe2ry.interceptor.MyInterceptor    : preHandle
+2018-10-12 17:23:55.444  INFO 23704 --- [http-nio-8080-exec-4] com.fabe2ry.interceptor.MyInterceptor    : postHandle
+2018-10-12 17:23:55.445  INFO 23704 --- [http-nio-8080-exec-4] com.fabe2ry.interceptor.MyInterceptor    : afterCompletion
+2018-10-12 17:26:54.944  INFO 23704 --- [http-nio-8080-exec-10] com.fabe2ry.interceptor.MyInterceptor    : false
+2018-10-12 17:28:36.414  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:29:32.754  INFO 23704 --- [http-nio-8080-exec-1] com.fabe2ry.interceptor.MyInterceptor    : false
+2018-10-12 17:29:41.512  INFO 23704 --- [http-nio-8080-exec-4] com.fabe2ry.interceptor.MyInterceptor    : false
+2018-10-12 17:30:30.993  INFO 23704 --- [http-nio-8080-exec-3] com.fabe2ry.interceptor.MyInterceptor    : false
+2018-10-12 17:33:36.422  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:38:36.434  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:39:02.606  INFO 23704 --- [http-nio-8080-exec-7] com.fabe2ry.interceptor.MyInterceptor    : false
+2018-10-12 17:41:55.031  INFO 23704 --- [http-nio-8080-exec-9] com.fabe2ry.interceptor.MyInterceptor    : http://localhost:8080/api/user/login
+2018-10-12 17:41:55.032  INFO 23704 --- [http-nio-8080-exec-9] com.fabe2ry.interceptor.MyInterceptor    : /api/user/login
+2018-10-12 17:41:55.032  INFO 23704 --- [http-nio-8080-exec-9] com.fabe2ry.interceptor.MyInterceptor    : 
+2018-10-12 17:41:55.032  INFO 23704 --- [http-nio-8080-exec-9] com.fabe2ry.interceptor.MyInterceptor    : /api/user/login
+2018-10-12 17:41:55.032  INFO 23704 --- [http-nio-8080-exec-9] com.fabe2ry.interceptor.MyInterceptor    : null
+2018-10-12 17:43:36.445  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:48:36.452  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:53:36.455  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 17:58:36.459  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:03:36.462  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:08:36.462  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:13:36.464  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:18:36.465  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:23:36.466  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:28:36.465  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:33:36.466  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:38:36.465  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:43:36.465  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:48:36.467  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:53:36.466  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 18:58:36.465  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 19:03:36.466  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 19:08:36.466  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 19:13:36.466  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 19:18:36.466  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 19:23:36.464  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file
+2018-10-12 19:28:36.465  INFO 23704 --- [pool-1-thread-1] c.f.schedule.DeleteExcelScheduleTask     : start delete excel file

@@ -1,5 +1,6 @@
 package com.fabe2ry.interceptor;
 
+import com.fabe2ry.controller.util.LoginHelper;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,17 +16,36 @@ public class MyInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        logger.info("preHandle");
-        return true;
+        if(LoginHelper.checkHasLogined(request, response)){
+            return true;
+        }
+
+        if(request.getRequestURI().equals("/api/user/login") || request.getRequestURI().equals("/api/user/logout")
+                || request.getRequestURI().equals("/api/user/register")){
+            return true;
+        }
+//        logger.info(request.getRequestURL().toString());
+//        logger.info(request.getRequestURI());
+//        logger.info(request.getContextPath());
+//        logger.info(request.getServletPath());
+//        logger.info(request.getQueryString());
+
+        response.setStatus(401);
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:63342");
+        response.addHeader("Access-Control-Allow-Credentials", "true");
+        response.getWriter().append("{");
+        response.getWriter().append("message : Unauthorized");
+        response.getWriter().append("}");
+        return false;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        logger.info("postHandle");
+//        logger.info("postHandle");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        logger.info("afterCompletion");
+//        logger.info("afterCompletion");
     }
 }

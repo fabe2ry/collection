@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>import</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" id="app">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h1>
+                    Demo <small>select</small>
+                </h1>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-2 column">
+                    <ul class="nav nav-stacked nav-pills">
+                        <li  >
+                            <a href="./select.html">查看用户</a>
+                        </li>
+                        <li >
+                            <a href="./add.html">添加用户</a>
+                        </li>
+                        <li >
+                            <a href="./vlog.html">查看日志</a>
+                        </li>
+                        <li class="active">
+                            <a href="./import.html">导入excel</a>
+                        </li>
+                        <li >
+                            <a href="./export.html">导出excel</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-10 column">
+                    <!--<form action="http://localhost:8080/api/user/importGoodsExcel" enctype="multipart/form-data" method="post">-->
+                        <!--<input type="file" name="file"/>-->
+                        <!--<input type="submit" value="提交excel文件">-->
+                    <!--</form>-->
+                    <h1>上传Excel</h1>
+                    <input type="file" name="file" @change="onExcelFileChange"/>
+                    <button type="button" class="btn btn btn-primary" v-on:click="uploadExcel">上传</button>
+
+                    <!--unfinished-->
+                    <!--<form @submit.prevent="submit">-->
+                        <!--<input type="file" name="file" v-model="myExcelFile">-->
+                        <!--<input type="submit" value="提交">-->
+                    <!--</form>-->
+
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <button type="button" class="btn btn btn-primary" v-on:click="downloadExcel">下载随机数据模板</button>
+
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <h1>上传图片</h1>
+                    <input type="file" name="file" @change="onImgFileChange"/>
+                    <button type="button" class="btn btn btn-primary" v-on:click="uploadImg">上传</button>
+
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <button type="button" class="btn btn btn-primary" v-on:click="downloadImg">下载上传图片</button>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <button type="button" class="btn btn btn-primary" v-on:click="showImg">展示图片</button>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <img :src="mySrc" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    new Vue({
+        el : '#app',
+        data : {
+            mySrc:'http://placehold.it/200x100/0f0/ccc.png',
+            myExcelFile : '',
+            myImgFile:'',
+        },
+        watch: {
+        },
+        mounted:function(){
+        },
+        methods:{
+            downloadExcel:function () {
+                window.location.href="http://localhost:8080/api/user/getTestExcel";
+            },
+            downloadImg:function () {
+                axios.defaults.withCredentials = true
+                axios({
+                    method:'get',
+                    url:'http://localhost:8080/api/user/imgDownload',
+//                    responseType:'blob',
+                }).then(function(response) {
+//                    var url = window.URL.createObjectURL(response.data)
+//                    var link = document.createElement('a')
+//                    link.style.display = 'none'
+//                    link.href = url
+//                    link.setAttribute('download', 'my.png')
+//                    document.body.appendChild(link)
+//                    link.click()
+//                    console.log(url)
+
+                    alert(response.data.success)
+                    if(response.data.success){
+                        window.location.href=response.data.result
+
+//                        var link = document.createElement('a')
+//                        link.style.display = 'none'
+//                        link.href = response.data.result
+//                        link.setAttribute('download', 'download.png')
+//                        document.body.appendChild(link)
+//                        link.click()
+                    }else {
+                        alert(response.data.message)
+                    }
+                }.bind(this));
+            },
+            showImg:function () {
+                axios.defaults.withCredentials = true
+                axios({
+                    method:'get',
+                    url:'http://localhost:8080/api/user/imgShow',
+                }).then(function(response) {
+                    if(response.data.success){
+                        this.mySrc = response.data.result
+                    }else {
+                        alert(response.data.message)
+                    }
+                }.bind(this));
+            },
+            onExcelFileChange:function (event) {
+                console.log(event)
+                console.log(event.target)
+                console.log(event.target.files)
+                console.log(event.target.files[0])
+                this.myExcelFile = event.target.files[0]
+            },
+            uploadExcel:function () {
+                var formdata = new FormData();
+                formdata.append("file", this.myExcelFile)
+
+                var config = { headers: { 'Content-Type': 'multipart/form-data' } };;
+
+                axios.defaults.withCredentials = true
+//                axios({
+//                    method:'post',
+//                    url:'http://localhost:8080/api/user/imgUplaod',
+//                    formdata:formdata,
+//                    headers :{
+//                        'Content-Type':'multipart/form-data'
+//                    }
+//                }).then(function(response) {
+//                })
+                axios.post('http://localhost:8080/api/user/importGoodsExcel', formdata, config)
+                    .then(function (response) {
+                        if(response.data.success){
+                            alert('上传成功')
+                        }else{
+                            alert(response.data.message)
+                        }
+                    })
+            },
+//            submit:function (event) {
+//                console.log(event)
+//                console.log(event.target.file)
+//            },
+            onImgFileChange : function (event) {
+                this.myImgFile = event.target.files[0]
+            },
+            uploadImg: function () {
+                var formdata = new FormData();
+                formdata.append("file", this.myImgFile)
+
+                var config = { headers: { 'Content-Type': 'multipart/form-data' } };;
+
+                axios.defaults.withCredentials = true
+                axios.post('http://localhost:8080/api/user/imgUplaod', formdata, config)
+                    .then(function (response) {
+                        if(response.data.success){
+                            alert('上传成功 图片链接：' + response.data.result + ' 你也可以点击按钮[展示图片]查看上传的图片')
+                        }else{
+                            alert(response.data.message)
+                        }
+                    })
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

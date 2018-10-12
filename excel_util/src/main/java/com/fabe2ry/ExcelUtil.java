@@ -53,13 +53,11 @@ public class ExcelUtil {
      */
 //    TODO:查查怎么公司和这边同步配置
     public static List<List> parseWorkbook(Workbook workbook, Class<?>[] classes){
-//        return AssembleUtil.assemble(workbook, classes);
-        List<ClassSettingBean> classSettingBeans = ParseSettingUtil.parseSettingPhase(workbook, classes);
-        if(classSettingBeans == null || classSettingBeans.size() <= 0){
-            throw new ParseSettingException("解析注解错误，为空或者长度为0");
-        }
+        return AssembleUtil.assemble(workbook, classes);
+    }
 
-        return AssembleUtil.assemble(workbook, classSettingBeans);
+    public static List parseWorkbook(Workbook workbook, Class clazz){
+        return AssembleUtil.assemble(workbook, clazz);
     }
 
     /**

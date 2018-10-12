@@ -12,19 +12,8 @@ import java.util.logging.Logger;
 public class MistakenHandleUtil {
 
     static Logger logger = Logger.getLogger(MistakenHandleUtil.class.getName());
-    /**
-     * 添加错误信息
-     * @param row
-     * @param rowIndex
-     * @param colIndex
-     * @param message
-     */
-    public static void createMistakenPrompt(Row row, int tailIndex,int rowIndex, int colIndex, String message) {
-        if(row.getRowNum() != rowIndex){
-            logger.info(String.format("行信息错误 row.getRow: %d rowIndex: %d", row.getRowNum(), rowIndex));
-            return;
-        }
 
+    public static void createMistakenPrompt(Row row, int tailIndex, String message) {
 //      使用策略封装这个决定
 //        int tailCellIndex = row.getLastCellNum();
         int tailCellIndex = tailIndex;
@@ -36,9 +25,8 @@ public class MistakenHandleUtil {
         }else{
 //            采用添加，而不是覆盖
             String beforeStr = CellTransformUtil.getCellStringValue(cell);
-            cell.setCellValue(beforeStr + " " + message);
+            cell.setCellValue(beforeStr + "   " + message);
         }
-
     }
 
     /**

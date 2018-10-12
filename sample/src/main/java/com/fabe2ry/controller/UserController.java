@@ -225,23 +225,23 @@ public class UserController {
         }
 
         try{
-            Class[] classes = new Class[]{Goods.class};
             Workbook workbook = ExcelUtil.getWorkbookFromRequest(request);
 
-            List<List> allList = ExcelUtil.parseWorkbook(workbook, classes);
-            if(allList != null && allList.get(0) != null){
-                excelService.storeGoodsList(allList.get(0));
+            List list = ExcelUtil.parseWorkbook(workbook, Goods.class);
+            if(list != null){
+                excelService.storeGoodsList(list);
+//                ExcelUtil.writeWorkBookToResponse(workbook, response);
+                ExcelUtil.writeWorkBookToFile(workbook, "d:/excel/", "test.xlsx");
+
+                ListVo listVo = new ListVo();
+                listVo.setSuccess(true);
+                listVo.setTotal(list.size());
+                listVo.setMessage("上传成功");
+                listVo.setResult(list);
+                return listVo;
             }
 
-//            ExcelUtil.writeWorkBookToResponse(workbook, response);
-            ExcelUtil.writeWorkBookToFile(workbook, "d:/excel/", "test.xlsx");
-
-            ListVo listVo = new ListVo();
-            listVo.setSuccess(true);
-            listVo.setTotal(allList.get(0).size());
-            listVo.setMessage("上传成功");
-            listVo.setResult(allList.get(0));
-            return listVo;
+            return LoginHelper.getFailListVo("无法创建list，设置存在错误");
         }catch (RuntimeException e){
             e.printStackTrace();
             return LoginHelper.getFailListVo(e.getMessage());

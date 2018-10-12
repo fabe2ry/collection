@@ -27,7 +27,10 @@ public class ExcelServiceImpl implements ExcelService {
 
     @Override
     public boolean storeGoodsList(List<Goods> list) {
-        return goodsDao.insert(list);
+        if(list.size() != 0){
+            return goodsDao.insert(list);
+        }
+        return false;
     }
 
     @Override

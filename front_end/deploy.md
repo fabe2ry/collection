@@ -20,5 +20,20 @@
 
 默认启动的端口为8080，为了和后端的项目不影响，设置端口为8888，打开`../config/index,js`,修改8080为8888，就可以了
 
+##### 导入element-ui(参考官网的*快速上手*)
+
+* 安装element-ui模块，`npm install element-ui -S`
+* 在main.js中引入模块
+
+```javascript
+import ElementUI from ‘element-ui‘
+import ‘element-ui/lib/theme-chalk/index.css‘
+Vue.use(ElementUI)
+```
+
+这里可能会提示需要安装对应的css文件，按照提示按照就行了
+
+
+
 
 

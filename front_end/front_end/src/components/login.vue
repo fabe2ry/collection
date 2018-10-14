@@ -65,12 +65,13 @@ export default {
             }).then(function(response) {
                 alert(response.data.message)
                 if(response.data.success){
-                    window.location.href="./select.html";
+                    window.location.href="./select";
                 }
             })
         },
         register:function (event) {
-            window.location.href="./register.html";
+            window.location.href="./register";
+            // this.$router.push('/register')
         }
     }
 }

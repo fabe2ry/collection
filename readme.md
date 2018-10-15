@@ -30,5 +30,7 @@
 * 通过jar启动项目`java -jar sample-0.0.1-SNAPSHOT.jar --spring.profiles.active=test`,使用h2数据库
 * 项目前端界面建议使用idea的build-in web部署，这是由于cors如果要允许cookie，设置时候不能使用*来允许，所以代码中跨域只指定了idea的build-in web，即`http://localhost:63342/`
 
+### 使用vue-cli前端
 
-
+* 进入到front_end/front_end的路径下，输入`npm install`安装对应的模块
+* `npm run dev`启动项目

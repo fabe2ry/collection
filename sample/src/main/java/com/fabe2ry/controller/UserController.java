@@ -32,7 +32,7 @@ import java.util.logging.Logger;
  */
 @RestController
 @RequestMapping("/api/user/")
-@CrossOrigin(origins = "http://localhost:63342/", maxAge = 100, exposedHeaders = {"Content-Disposition"})
+@CrossOrigin(origins = {"http://localhost:63342/", "http://localhost:8888/"}, maxAge = 100, exposedHeaders = {"Content-Disposition"})
 public class UserController {
 
     Logger logger = Logger.getLogger(UserController.class.getName());

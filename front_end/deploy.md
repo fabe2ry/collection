@@ -72,11 +72,25 @@ Vue.prototype.$http=axios
 
 * 安装bootstrap，使用`npm install boostrap --save`
 
-* 在main.js中导入bootstrap(路径根据module下文件放置的位置设置)
+* 在**main.js**中导入bootstrap(路径根据module下文件放置的位置设置)
 
   ```js
   import  'bootstrap/dist/js/bootstrap.min.js'
   import  'bootstrap/dist/css/bootstrap.min.css'
+  ```
+
+* 如果你是打算将bootstrap手动添加进入项目，需要进入**webpack.base.conf.js**
+
+  ```javascript
+   resolve: {
+      extensions: ['.js', '.vue', '.json'],
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js',
+        '@': resolve('src'),
+        // 引入bootstraop
+        'bootstrap':resolve('src/assets/bootstrap'),
+      }
+    }
   ```
 
 ##### 使用atom来进行vue开发，添加插件

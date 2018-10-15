@@ -29,9 +29,13 @@ public class MyInterceptor implements HandlerInterceptor {
 //        logger.info(request.getContextPath());
 //        logger.info(request.getServletPath());
 //        logger.info(request.getQueryString());
-
+//        logger.info(request.getLocalPort() + "");
         response.setStatus(401);
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:63342");
+//        设置跨域url
+        int port = 8888;
+        String corxUrl = "http://localhost:" + port;
+
+        response.setHeader("Access-Control-Allow-Origin", corxUrl);
         response.addHeader("Access-Control-Allow-Credentials", "true");
         response.getWriter().append("{");
         response.getWriter().append("message : Unauthorized");
@@ -48,4 +52,5 @@ public class MyInterceptor implements HandlerInterceptor {
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
 //        logger.info("afterCompletion");
     }
+
 }

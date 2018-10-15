@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>logout</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+<script>
+
+
+    new Vue({
+        el : '#app',
+        data : {
+        },
+        mounted:  function(){
+            this.logout()
+        },
+        methods :{
+            logout:function(){
+                axios.defaults.withCredentials = true
+                axios({
+                    method:'get',
+                    url:'http://localhost:8080/api/user/logout',
+                }).then(function(response) {
+                    alert(response.data.message)
+                    window.location.href="./login.html";
+                })
+            },
+        }
+    })
+
+</script>
+
+</body>
+</html>

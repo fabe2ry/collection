@@ -33,13 +33,51 @@ Vue.use(ElementUI)
 
 这里可能会提示需要安装对应的css文件，按照提示按照就行了
 
-##### 导入bootsrap
-
-
-
 ##### 导入axios
 
+* 安装axios模块，`npm install axios`
+* 在main.js中添加
 
+```javascript
+import axios from 'axios'
+Vue.prototype.$http=axios
+```
+
+##### 导入jquery
+
+* `npm install jquery --save`：下载文件到module
+
+* 打开**webpack.base.conf.js**
+
+  * 添加`var webpack=require('webpack');`
+
+  * ```javascript
+    
+    plugins: [
+      new webpack.ProvidePlugin({
+        $:"jquery",
+        jQuery:"jquery",
+        "windows.jQuery":"jquery"
+      })
+    ]
+    ```
+
+* 打开main.js，添加`import $ from 'jquery'`
+
+##### 导入bootsrap
+
+在导入bootstrap之前，需要先导入其依赖**jquery**和**popper.js**
+
+* 安装popper.js，使用`npm install popper.js --save`
+
+* 安装bootstrap，使用`npm install boostrap --save`
+
+* 在main.js中导入bootstrap(路径根据module下文件放置的位置设置)
+
+  ```js
+  import  'bootstrap/dist/js/bootstrap.min.js'
+  import  'bootstrap/dist/css/bootstrap.min.css'
+  ```
 
 ##### 使用atom来进行vue开发，添加插件
 

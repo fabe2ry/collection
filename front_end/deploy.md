@@ -26,12 +26,28 @@
 * 在main.js中引入模块
 
 ```javascript
-import ElementUI from ‘element-ui‘
-import ‘element-ui/lib/theme-chalk/index.css‘
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 ```
 
 这里可能会提示需要安装对应的css文件，按照提示按照就行了
+
+##### 导入bootsrap
+
+
+
+##### 导入axios
+
+
+
+##### 使用atom来进行vue开发，添加插件
+
+* vue-language：让atom识别vue后缀文件，进行颜色高亮
+
+* atom-beauty：格式化代码
+
+* PlatformIO IDE Terminal：方便的在atom中使用命令行，使用快捷键`ctrl + ``来调起和关闭命令行
 
 
 

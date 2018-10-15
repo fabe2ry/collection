@@ -20,26 +20,33 @@ export default {
 			activeIndex: "1",
 			// TODO:这样写链接也不是很好
 			urlMap: [
-				'./select',
-				'./add',
-				'./vlog',
-				'./import',
-				'./export'
+				'select',
+				'add',
+				'vlog',
+				'import',
+				'export'
 			]
 		}
 	},
 	mounted:function(){
+		// alert(window.location.href)
+		// alert(this.$route.path)
+		// alert(this.$route.params)
 		this.axios.interceptors.response.use(function (response){
 			return response;
 		}, function (error) {
 			this.$router.push('/logout')
 			return Promise.reject(error);
 		}.bind(this));
+
+		var path = this.$route.path
+		var index = this.urlMap.indexOf(path.replace('/hall/', '')) + 1;
+		this.activeIndex = index.toString();
 	},
 	methods: {
 		handleSelect(key, keyPath) {
  			this.activeIndex = key;
-			this.$router.push(this.urlMap[key - 1])
+			this.$router.push('./' + this.urlMap[key - 1])
 		},
 	}
 }

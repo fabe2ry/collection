@@ -24,15 +24,21 @@ public class MyInterceptor implements HandlerInterceptor {
                 || request.getRequestURI().equals("/api/user/register")){
             return true;
         }
+
 //        logger.info(request.getRequestURL().toString());
 //        logger.info(request.getRequestURI());
 //        logger.info(request.getContextPath());
 //        logger.info(request.getServletPath());
 //        logger.info(request.getQueryString());
 //        logger.info(request.getLocalPort() + "");
+//        logger.info(request.getRemoteHost());
+//        logger.info(request.getRemotePort() + "");
+
         response.setStatus(401);
 //        设置跨域url
-        int port = 8888;
+
+        String requestOrign = request.getHeader("Origin");
+        String port = requestOrign.split(":")[2];
         String corxUrl = "http://localhost:" + port;
 
         response.setHeader("Access-Control-Allow-Origin", corxUrl);

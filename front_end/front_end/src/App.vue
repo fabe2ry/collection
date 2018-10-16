@@ -12,7 +12,4 @@ export default {
 
 <style>
 /* TODO:这个怎么影响到其他css的 */
-/* #app {
-
-} */
 </style>
